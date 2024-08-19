@@ -1,0 +1,41 @@
+[33mcommit 4a0e4ba065230fa27e6a1c42dc79d0a9de27deed[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mPengfei/new-setup[m[33m, [m[1;31morigin/Pengfei/new-setup[m[33m)[m
+Author: Pengfei Yang <workspace4brace@126.com>
+Date:   Tue Aug 20 02:13:45 2024 +0800
+
+    描述你所做的更改，例如：更新 Maven 配置和 IntelliJ IDEA 配置
+
+[33mcommit 4e55a4dfd4ec8922f326dd443bfb2c0892370e66[m
+Author: Pengfei Yang <workspace4brace@126.com>
+Date:   Mon Aug 19 13:40:17 2024 +0800
+
+    Renew Maven configuration, add run tests
+
+[33mcommit e13b0f43f2583a2cf183e020cbe3861211859716[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Jim Jian <jianning2000@hotmail.com>
+Date:   Mon Aug 19 12:43:49 2024 +1200
+
+    Creat Full GUI and fist menu
+
+[33mcommit e41fbf4432ca0ac36fb0bd315d743e94690dbd19[m
+Author: Jim Jian <132314522+JimJian2023@users.noreply.github.com>
+Date:   Mon Aug 19 11:39:47 2024 +1200
+
+    Update maven.yml
+
+[33mcommit 24e33a1cebdc1f96c4e984fa29a5c453cdcde93f[m
+Author: Jim Jian <132314522+JimJian2023@users.noreply.github.com>
+Date:   Mon Aug 19 11:33:43 2024 +1200
+
+    Create maven.yml
+
+[33mcommit 66b960c922faca2ead2371a22d455d423d9e3a94[m
+Author: Jim Jian <jianning2000@hotmail.com>
+Date:   Mon Aug 19 11:20:17 2024 +1200
+
+    Creat the Text editor project
+
+[33mcommit 0efa2e2f671557d84a7675a41a2de9c35e5cd981[m
+Author: Jim Jian <132314522+JimJian2023@users.noreply.github.com>
+Date:   Mon Aug 19 10:55:58 2024 +1200
+
+    Initial commit
