@@ -9,7 +9,7 @@ public class DateTimeUtil {
     public static void updateDateTime(JLabel dateTimeLabel) {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String dateTimeString = formatter.format(new Date());
-        dateTimeLabel.setText("Current Time: " + dateTimeString);
+        //dateTimeLabel.setText("Current Time: " + dateTimeString);
     }
 
     public static void insertTimeAndDate(JTextArea textArea) {

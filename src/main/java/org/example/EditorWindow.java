@@ -22,7 +22,7 @@ public class EditorWindow extends JFrame {
         textArea.setTabSize(4);
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
-        textArea.setText("Text Editor");
+        //textArea.setText("");
 
         JScrollPane scrollPane = new JScrollPane(textArea);
 
