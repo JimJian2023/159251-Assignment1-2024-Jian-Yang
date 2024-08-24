@@ -7,21 +7,37 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.FileWriter;
+import javax.swing.*;
+import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 
 
 public class EditorWindow extends JFrame {
-    private JTextArea textArea;
+    private RSyntaxTextArea textArea;
     private JLabel dateTimeLabel;
 
     public EditorWindow() {
         initializeUI();
     }
 
+    public RSyntaxTextArea getTextArea() {
+        return textArea;
+    }
+
     private void initializeUI() {
-        textArea = new JTextArea();
+        textArea = new RSyntaxTextArea();
         textArea.setTabSize(4);
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
+
+        // 确保没有默认选择的文本
+        textArea.setSelectionStart(0);
+        textArea.setSelectionEnd(0);
+        textArea.setHighlightCurrentLine(false);
+
+        // 设置背景颜色为白色，避免黄色高亮
+        textArea.setBackground(Color.WHITE);
+
+
         //textArea.setText("");
 
         JScrollPane scrollPane = new JScrollPane(textArea);
@@ -179,9 +195,24 @@ public class EditorWindow extends JFrame {
         return helpMenu;
     }
 
+    private JMenu creatSearchMenu() {
+        JMenu searchMenu = new JMenu("Search");
+        JMenuItem findMenuItem = new JMenuItem("Find");
+        JMenuItem replaceMenuItem = new JMenuItem("Replace");
+
+        findMenuItem.addActionListener(e -> findText());
+        replaceMenuItem.addActionListener(e -> replaceText());
+
+        searchMenu.add(findMenuItem);
+        searchMenu.add(replaceMenuItem);
+
+        return searchMenu;
+    }
+
     private void setupMenu() {
         JMenuBar menuBar = new JMenuBar();
         menuBar.add(createFileMenu());
+        menuBar.add(creatSearchMenu());
         menuBar.add(createEditMenu());
         menuBar.add(createHelpMenu());
         setJMenuBar(menuBar);
@@ -257,7 +288,21 @@ public class EditorWindow extends JFrame {
         DateTimeUtil.insertTimeAndDate(textArea);
     }
 
+    private void findText() {
+        FindDialog findDialog = new FindDialog(this);
+        findDialog.setVisible(true);
+    }
+
+    private void replaceText() {
+        ReplaceDialog replaceDialog = new ReplaceDialog(this);
+        replaceDialog.setVisible(true);
+    }
+
+    
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new EditorWindow().setVisible(true));
     }
+
+
 }

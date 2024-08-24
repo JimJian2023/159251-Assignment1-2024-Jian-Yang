@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme xmlns="http://fifesoft.com/rsyntaxtextarea/themes"
+       version="1.0">
+
+    <!-- 编辑器背景颜色 -->
+    <color id="background" r="255" g="255" b="255"/>
+
+    <!-- 文本颜色 -->
+    <color id="default" r="0" g="0" b="0"/>
+
+    <!-- 关键字颜色 -->
+    <color id="keyword" r="127" g="0" b="85"/>
+
+    <!-- 字符串颜色 -->
+    <color id="string" r="42" g="0" b="255"/>
+
+    <!-- 注释颜色 -->
+    <color id="comment" r="63" g="127" b="95"/>
+
+    <!-- 字体配置 -->
+    <font family="Courier New" size="12" style="plain"/>
+
+</theme>
