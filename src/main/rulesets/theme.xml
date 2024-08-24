@@ -9,15 +9,58 @@
     <color id="default" r="0" g="0" b="0"/>
 
     <!-- 关键字颜色 -->
-    <color id="keyword" r="127" g="0" b="85"/>
+    <color id="keyword" r="127" g="0" b="85"/> <!-- 深红色 -->
 
     <!-- 字符串颜色 -->
-    <color id="string" r="42" g="0" b="255"/>
+    <color id="string" r="42" g="0" b="255"/> <!-- 蓝色 -->
 
     <!-- 注释颜色 -->
-    <color id="comment" r="63" g="127" b="95"/>
+    <color id="comment" r="63" g="127" b="95"/> <!-- 绿色 -->
+
+    <!-- 数字颜色 -->
+    <color id="literalNumber" r="255" g="140" b="0"/> <!-- 橙色 -->
+
+    <!-- 方法名颜色 -->
+    <color id="function" r="0" g="102" b="204"/> <!-- 深蓝色 -->
+
+    <!-- 变量名颜色 -->
+    <color id="variable" r="0" g="153" b="51"/> <!-- 深绿色 -->
+
+    <!-- 类型颜色 (如 int, String 等) -->
+    <color id="type" r="204" g="0" b="204"/> <!-- 紫色 -->
+
+    <!-- 运算符颜色 -->
+    <color id="operator" r="0" g="0" b="0"/> <!-- 黑色 (与默认文本相同) -->
+
+    <!-- 字符颜色 (单个字符, 如 'a') -->
+    <color id="char" r="42" g="0" b="255"/> <!-- 与字符串相同的蓝色 -->
+
+    <!-- 函数调用颜色 -->
+    <color id="functionCall" r="128" g="0" b="128"/> <!-- 紫色 -->
+
+    <!-- 标签颜色 (如 HTML/XML 中的标签) -->
+    <color id="tag" r="0" g="102" b="204"/> <!-- 深蓝色 -->
 
     <!-- 字体配置 -->
     <font family="Courier New" size="12" style="plain"/>
+
+    <!-- 选中内容的背景色 (浅灰色) -->
+    <color id="selectionBG" r="220" g="220" b="220"/>
+
+    <!-- 当前行高亮颜色 -->
+    <color id="currentLineHighlight" r="245" g="245" b="245"/> <!-- 非常浅的灰色 -->
+
+    <!-- 光标颜色 -->
+    <color id="caret" r="0" g="0" b="0"/>
+
+    <!-- 行号区域背景颜色 -->
+    <color id="gutterBackground" r="240" g="240" b="240"/>
+
+    <!-- 行号文本颜色 -->
+    <color id="lineNumber" r="128" g="128" b="128"/> <!-- 灰色 -->
+
+    <!-- 折叠标记区域背景颜色 -->
+    <color id="foldIndicatorFG" r="128" g="128" b="128"/> <!-- 灰色 -->
+    <color id="foldIndicatorArmedFG" r="255" g="0" b="0"/> <!-- 红色 -->
 
 </theme>

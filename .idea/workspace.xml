@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3241529-84f9-434a-9e81-00f3f2ffbe34" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsonSchemas.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/EditorWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/EditorWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/FileOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/FileOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SyntaxHighlighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SyntaxHighlighter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/rulesets/theme.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/rulesets/theme.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
