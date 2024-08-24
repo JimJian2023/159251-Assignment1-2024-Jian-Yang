@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- PMD 文件，含基本、设计、错误检查和优化规则 -->
+<ruleset name="Custom Rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>Java Basic Rules with additional rulesets</description>
+    <!-- Java 编码最佳实践的规则 Rules which enforce generally accepted best practices -->
+    <rule ref="category/java/bestpractices.xml"/>
+    <!-- Java Rules that flag suboptimal code. -->
+    <rule ref="category/java/performance.xml"/>
+    <!-- Java Quickstart configuration of PMD. Includes the rules that are most likely to apply everywhere. -->
+    <rule ref="rulesets/java/quickstart.xml"/>
+    <!-- 设计方面的规则 Rules that help you discover design issues -->
+    <rule ref="category/java/design.xml"/>
+    <!-- Java Rules that are related to code documentation. -->
+    <!-- <rule ref="category/java/documentation.xml"/> -->
+    <!-- Java 检测常见错误 Rules to detect constructs that are either broken, extremely confusing or prone to runtime errors -->
+    <rule ref="category/java/errorprone.xml"/>
+    <!-- Java代码风格 Rules which enforce a specific coding style -->
+    <rule ref="category/java/codestyle.xml"/>
+</ruleset>

@@ -4,33 +4,31 @@ import javax.swing.*;
 import java.io.*;
 
 public class FileOperation {
-    public static void openFile(EditorWindow editorWindow, JTextArea textArea) {
+
+    public static void openFile(JFrame parent, JTextArea textArea) {
         JFileChooser fileChooser = new JFileChooser();
-        int response = fileChooser.showOpenDialog(editorWindow);
-        if (response == JFileChooser.APPROVE_OPTION) {
+        int option = fileChooser.showOpenDialog(parent);
+        if (option == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
             try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-                StringBuilder content = new StringBuilder();
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    content.append(line).append("\n");
-                }
-                textArea.setText(content.toString());
-            } catch (IOException e) {
-                e.printStackTrace();
+                textArea.read(reader, null);
+                parent.setTitle("Text Editor - " + file.getName());
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(parent, "Error opening file.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }
 
-    public static void saveFile(EditorWindow editorWindow, JTextArea textArea) {
+    public static void saveFile(JFrame parent, JTextArea textArea) {
         JFileChooser fileChooser = new JFileChooser();
-        int response = fileChooser.showSaveDialog(editorWindow);
-        if (response == JFileChooser.APPROVE_OPTION) {
+        int option = fileChooser.showSaveDialog(parent);
+        if (option == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-                writer.write(textArea.getText());
-            } catch (IOException e) {
-                e.printStackTrace();
+                textArea.write(writer);
+                parent.setTitle("Text Editor - " + file.getName());
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(parent, "Error saving file.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }
