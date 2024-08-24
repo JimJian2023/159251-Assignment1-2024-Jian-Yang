@@ -65,71 +65,7 @@ public class EditorWindow extends JFrame {
     public void launch() {
         setVisible(true);
     }
-
-    /*private void setupMenu() {
-        JMenuBar menuBar = new JMenuBar();
-
-        JMenu fileMenu = new JMenu("File");
-        JMenuItem newWindowMenuItem = new JMenuItem("New Window");
-        JMenuItem openMenuItem = new JMenuItem("Open");
-        JMenuItem saveMenuItem = new JMenuItem("Save");
-        JMenuItem saveAsMenuItem = new JMenuItem("Save As");
-        JMenuItem exportAsMenuItem = new JMenuItem("Export As");
-        JMenuItem printMenuItem = new JMenuItem("Print");
-        JMenuItem exitMenuItem = new JMenuItem("Exit");
-
-        newWindowMenuItem.addActionListener(e -> openNewWindow());
-        openMenuItem.addActionListener(e -> openFile());
-        saveMenuItem.addActionListener(e -> saveFile());
-        saveAsMenuItem.addActionListener(e -> saveFileAs());
-        exportAsMenuItem.addActionListener(e -> exportAsPDF());
-        printMenuItem.addActionListener(e -> printText());
-        exitMenuItem.addActionListener(e -> System.exit(0));
-
-        fileMenu.add(newWindowMenuItem);
-        fileMenu.add(openMenuItem);
-        fileMenu.add(saveMenuItem);
-        fileMenu.add(saveAsMenuItem);
-        fileMenu.add(exportAsMenuItem);
-        fileMenu.add(printMenuItem);
-        fileMenu.add(exitMenuItem);
-
-        JMenu editMenu = new JMenu("Edit");
-        JMenuItem selectAllMenuItem = new JMenuItem("Select All");
-        JMenuItem copyMenuItem = new JMenuItem("Copy");
-        JMenuItem pasteMenuItem = new JMenuItem("Paste");
-        JMenuItem cutMenuItem = new JMenuItem("Cut");
-        JMenuItem insertTimeMenuItem = new JMenuItem("Insert Time/Date");
-
-        selectAllMenuItem.addActionListener(e -> textArea.selectAll());
-        copyMenuItem.addActionListener(e -> textArea.copy());
-        pasteMenuItem.addActionListener(e -> textArea.paste());
-        cutMenuItem.addActionListener(e -> textArea.cut());
-        insertTimeMenuItem.addActionListener(e -> insertTimeAndDate());
-
-        editMenu.add(selectAllMenuItem);
-        editMenu.add(copyMenuItem);
-        editMenu.add(pasteMenuItem);
-        editMenu.add(cutMenuItem);
-        editMenu.add(insertTimeMenuItem);
-
-        JMenu helpMenu = new JMenu("Help");
-        JMenuItem aboutMenuItem = new JMenuItem("About");
-        JMenuItem helpMenuItem = new JMenuItem("Help");
-
-        aboutMenuItem.addActionListener(e -> showAbout());
-        helpMenuItem.addActionListener(e -> showHelp());
-
-        helpMenu.add(aboutMenuItem);
-        helpMenu.add(helpMenuItem);
-
-        menuBar.add(fileMenu);
-        menuBar.add(editMenu);
-        menuBar.add(helpMenu);
-
-        setJMenuBar(menuBar);
-    }
-*/
+    
     private JMenu createFileMenu() {
         JMenu fileMenu = new JMenu("File");
         JMenuItem newWindowMenuItem = new JMenuItem("New Window");
