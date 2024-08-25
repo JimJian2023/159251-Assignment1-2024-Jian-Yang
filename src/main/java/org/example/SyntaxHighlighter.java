@@ -3,13 +3,23 @@ package org.example;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.SyntaxConstants;
 import org.fife.ui.rsyntaxtextarea.Theme;
-import java.io.File;
-public class SyntaxHighlighter {
-    public void applySyntaxHighlighting(RSyntaxTextArea textArea, File file) {
-        String fileName = file.getName();
 
-        // 根据文件扩展名设置不同的语法样式
-        // Set the syntax editing style for Java
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class SyntaxHighlighter {
+
+
+    public SyntaxHighlighter() {
+
+    }
+
+    public void applySyntaxHighlighting(final RSyntaxTextArea textArea, final File file) {
+        final String fileName = file.getName();
+
+
         if (fileName.endsWith(".java")) {
             textArea.setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA);
         } else if (fileName.endsWith(".py")) {
@@ -22,12 +32,12 @@ public class SyntaxHighlighter {
 
         textArea.setCodeFoldingEnabled(true);
 
-        // Apply a theme if available (optional)
+
         try {
-            Theme theme = Theme.load(getClass().getResourceAsStream("/src/main/rulesets/theme.xml"));
+            final Theme theme = Theme.load(getClass().getResourceAsStream("/src/main/rulesets/theme.xml"));
             theme.apply(textArea);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            Logger.getLogger(SyntaxHighlighter.class.getName()).log(Level.SEVERE, "Error applying theme", e);
         }
     }
 }

@@ -5,25 +5,34 @@ import javax.swing.text.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FindDialog extends JDialog {
-    private JTextField searchField;
-    private JButton findButton;
-    private JTextArea textArea;
+
+    private static final long serialVersionUID = 1L;
+
+
+    private final JTextField searchField;
+    private final JTextArea textArea;
+
+
+    private static final Logger logger = Logger.getLogger(FindDialog.class.getName());
 
     public FindDialog(Frame owner) {
         super(owner, "Find Text", true);
         textArea = ((EditorWindow) owner).getTextArea();
+        searchField = new JTextField(20);
         initializeComponents();
     }
 
     private void initializeComponents() {
-        searchField = new JTextField(20);
-        findButton = new JButton("Find");
+
+        JButton findButton = new JButton("Find");
 
         findButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent event) {
                 findText();
             }
         });
@@ -41,7 +50,7 @@ public class FindDialog extends JDialog {
         String searchText = searchField.getText();
         String textContent = textArea.getText();
 
-        // 清除之前的高亮
+
         Highlighter highlighter = textArea.getHighlighter();
         highlighter.removeAllHighlights();
 
@@ -55,16 +64,18 @@ public class FindDialog extends JDialog {
             try {
                 while (index >= 0) {
                     int end = index + searchText.length();
-                    // 高亮显示找到的文本
+
                     highlighter.addHighlight(index, end, new DefaultHighlighter.DefaultHighlightPainter(Color.YELLOW));
                     index = textContent.indexOf(searchText, end);
                 }
                 textArea.requestFocusInWindow();
-            } catch (BadLocationException e) {
-                e.printStackTrace();
+            } catch (BadLocationException ex) {
+
+                logger.log(Level.SEVERE, "Error highlighting text", ex);
             }
         } else {
             JOptionPane.showMessageDialog(this, "Text not found.", "Find", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }
+

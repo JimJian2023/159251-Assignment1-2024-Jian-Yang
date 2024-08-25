@@ -1,24 +1,31 @@
 package org.example;
-/*
-    .odt文件的处理功能
-    deal with .odt files
- */
-import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
+import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import javax.swing.*;
 import java.io.*;
+import java.nio.file.Files;
 
 public class OdtFileHandler {
 
-    public static void openOdtFile(JFrame parent, JTextArea textArea, File file) {
-        try (FileInputStream fis = new FileInputStream(file);
-             XWPFDocument document = new XWPFDocument(fis);
-             XWPFWordExtractor extractor = new XWPFWordExtractor(document)) {
-            textArea.setText(extractor.getText());
-            parent.setTitle("Text Editor - " + file.getName());
+
+    private OdtFileHandler() {
+
+    }
+
+    public static void openOdtFile(final JFrame parent, final RSyntaxTextArea textArea, final File file) {
+        try (InputStream inputStream = Files.newInputStream(file.toPath())) {
+            // 简单地读取文件内容到字符串中（假设 ODT 文件是纯文本）
+            StringBuilder content = new StringBuilder();
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    content.append(line).append("\n");
+                }
+            }
+
+            textArea.setText(content.toString());
         } catch (IOException ex) {
-            JOptionPane.showMessageDialog(parent, "Error reading the ODT file.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(parent, "Error opening ODT file.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 }

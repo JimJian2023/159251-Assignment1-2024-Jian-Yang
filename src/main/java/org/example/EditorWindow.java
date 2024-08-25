@@ -2,21 +2,25 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
-
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import java.io.FileWriter;
-import javax.swing.*;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 
-
 public class EditorWindow extends JFrame {
+
+    private static final long serialVersionUID = 1L;
+
+
     private RSyntaxTextArea textArea;
     private JLabel dateTimeLabel;
 
     public EditorWindow() {
+        super();
         initializeUI();
+
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
     public RSyntaxTextArea getTextArea() {
@@ -29,23 +33,19 @@ public class EditorWindow extends JFrame {
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
 
-        // 确保没有默认选择的文本
+
         textArea.setSelectionStart(0);
         textArea.setSelectionEnd(0);
         textArea.setHighlightCurrentLine(false);
 
-        // 设置背景颜色为白色，避免黄色高亮
+
         textArea.setBackground(Color.WHITE);
 
-
-        //textArea.setText("");
-
-        JScrollPane scrollPane = new JScrollPane(textArea);
-
+        final JScrollPane scrollPane = new JScrollPane(textArea);
         dateTimeLabel = new JLabel();
         updateDateTime();
 
-        JPanel topPanel = new JPanel(new BorderLayout());
+        final JPanel topPanel = new JPanel(new BorderLayout());
         topPanel.add(dateTimeLabel, BorderLayout.NORTH);
         topPanel.add(scrollPane, BorderLayout.CENTER);
 
@@ -53,12 +53,11 @@ public class EditorWindow extends JFrame {
 
         setTitle("Text Editor");
         setSize(800, 600);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
         setupMenu();
 
-        Timer timer = new Timer(1000, e -> updateDateTime());
+        final Timer timer = new Timer(1000, e -> updateDateTime());
         timer.start();
     }
 
@@ -67,14 +66,14 @@ public class EditorWindow extends JFrame {
     }
 
     private JMenu createFileMenu() {
-        JMenu fileMenu = new JMenu("File");
-        JMenuItem newWindowMenuItem = new JMenuItem("New Window");
-        JMenuItem openMenuItem = new JMenuItem("Open");
-        JMenuItem saveMenuItem = new JMenuItem("Save");
-        JMenuItem saveAsMenuItem = new JMenuItem("Save As");
-        JMenuItem exportAsMenuItem = new JMenuItem("Export As");
-        JMenuItem printMenuItem = new JMenuItem("Print");
-        JMenuItem exitMenuItem = new JMenuItem("Exit");
+        final JMenu fileMenu = new JMenu("File");
+        final JMenuItem newWindowMenuItem = new JMenuItem("New Window");
+        final JMenuItem openMenuItem = new JMenuItem("Open");
+        final JMenuItem saveMenuItem = new JMenuItem("Save");
+        final JMenuItem saveAsMenuItem = new JMenuItem("Save As");
+        final JMenuItem exportAsMenuItem = new JMenuItem("Export As");
+        final JMenuItem printMenuItem = new JMenuItem("Print");
+        final JMenuItem exitMenuItem = new JMenuItem("Exit");
 
         newWindowMenuItem.addActionListener(e -> openNewWindow());
         openMenuItem.addActionListener(e -> openFile());
@@ -82,7 +81,9 @@ public class EditorWindow extends JFrame {
         saveAsMenuItem.addActionListener(e -> saveFileAs());
         exportAsMenuItem.addActionListener(e -> exportAsPDF());
         printMenuItem.addActionListener(e -> printText());
-        exitMenuItem.addActionListener(e -> System.exit(0));
+
+        // 避免使用 System.exit()
+        exitMenuItem.addActionListener(e -> dispose());
 
         fileMenu.add(newWindowMenuItem);
         fileMenu.add(openMenuItem);
@@ -94,13 +95,14 @@ public class EditorWindow extends JFrame {
 
         return fileMenu;
     }
+
     private JMenu createEditMenu() {
-        JMenu editMenu = new JMenu("Edit");
-        JMenuItem selectAllMenuItem = new JMenuItem("Select All");
-        JMenuItem copyMenuItem = new JMenuItem("Copy");
-        JMenuItem pasteMenuItem = new JMenuItem("Paste");
-        JMenuItem cutMenuItem = new JMenuItem("Cut");
-        JMenuItem insertTimeMenuItem = new JMenuItem("Insert Time/Date");
+        final JMenu editMenu = new JMenu("Edit");
+        final JMenuItem selectAllMenuItem = new JMenuItem("Select All");
+        final JMenuItem copyMenuItem = new JMenuItem("Copy");
+        final JMenuItem pasteMenuItem = new JMenuItem("Paste");
+        final JMenuItem cutMenuItem = new JMenuItem("Cut");
+        final JMenuItem insertTimeMenuItem = new JMenuItem("Insert Time/Date");
 
         selectAllMenuItem.addActionListener(e -> textArea.selectAll());
         copyMenuItem.addActionListener(e -> textArea.copy());
@@ -118,9 +120,9 @@ public class EditorWindow extends JFrame {
     }
 
     private JMenu createHelpMenu() {
-        JMenu helpMenu = new JMenu("Help");
-        JMenuItem aboutMenuItem = new JMenuItem("About");
-        JMenuItem helpMenuItem = new JMenuItem("Help");
+        final JMenu helpMenu = new JMenu("Help");
+        final JMenuItem aboutMenuItem = new JMenuItem("About");
+        final JMenuItem helpMenuItem = new JMenuItem("Help");
 
         aboutMenuItem.addActionListener(e -> showAbout());
         helpMenuItem.addActionListener(e -> showHelp());
@@ -132,9 +134,9 @@ public class EditorWindow extends JFrame {
     }
 
     private JMenu creatSearchMenu() {
-        JMenu searchMenu = new JMenu("Search");
-        JMenuItem findMenuItem = new JMenuItem("Find");
-        JMenuItem replaceMenuItem = new JMenuItem("Replace");
+        final JMenu searchMenu = new JMenu("Search");
+        final JMenuItem findMenuItem = new JMenuItem("Find");
+        final JMenuItem replaceMenuItem = new JMenuItem("Replace");
 
         findMenuItem.addActionListener(e -> findText());
         replaceMenuItem.addActionListener(e -> replaceText());
@@ -146,7 +148,7 @@ public class EditorWindow extends JFrame {
     }
 
     private void setupMenu() {
-        JMenuBar menuBar = new JMenuBar();
+        final JMenuBar menuBar = new JMenuBar();
         menuBar.add(createFileMenu());
         menuBar.add(creatSearchMenu());
         menuBar.add(createEditMenu());
@@ -154,18 +156,17 @@ public class EditorWindow extends JFrame {
         setJMenuBar(menuBar);
     }
 
-
     private void updateDateTime() {
         DateTimeUtil.updateDateTime(dateTimeLabel);
     }
 
     private void showAbout() {
-        AboutDialog aboutDialog = new AboutDialog(this);
+        final AboutDialog aboutDialog = new AboutDialog(this);
         aboutDialog.setVisible(true);
     }
 
     private void showHelp() {
-        HelpDialog helpDialog = new HelpDialog(this);
+        final HelpDialog helpDialog = new HelpDialog(this);
         helpDialog.setVisible(true);
     }
 
@@ -182,10 +183,10 @@ public class EditorWindow extends JFrame {
     }
 
     private void saveFileAs() {
-        JFileChooser fileChooser = new JFileChooser();
-        int option = fileChooser.showSaveDialog(this);
+        final JFileChooser fileChooser = new JFileChooser();
+        final int option = fileChooser.showSaveDialog(this);
         if (option == JFileChooser.APPROVE_OPTION) {
-            File file = fileChooser.getSelectedFile();
+            final File file = fileChooser.getSelectedFile();
             try (FileWriter writer = new FileWriter(file)) {
                 writer.write(textArea.getText());
                 setTitle("Text Editor - " + file.getName());
@@ -196,21 +197,19 @@ public class EditorWindow extends JFrame {
     }
 
     private void exportAsPDF() {
-        JFileChooser fileChooser = new JFileChooser();
+        final JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Export As PDF");
         fileChooser.setFileFilter(new FileNameExtensionFilter("PDF Files", "pdf"));
-        int option = fileChooser.showSaveDialog(this);
+        final int option = fileChooser.showSaveDialog(this);
         if (option == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
-            // ensure as .pdf
+            // 确保文件名以 .pdf 结尾
             if (!file.getName().endsWith(".pdf")) {
                 file = new File(file.getAbsolutePath() + ".pdf");
             }
-            // method to export as PDF
             PDFExporter.exportToPDF(this, textArea, file);
         }
     }
-
 
     private void printText() {
         try {
@@ -225,20 +224,16 @@ public class EditorWindow extends JFrame {
     }
 
     private void findText() {
-        FindDialog findDialog = new FindDialog(this);
+        final FindDialog findDialog = new FindDialog(this);
         findDialog.setVisible(true);
     }
 
     private void replaceText() {
-        ReplaceDialog replaceDialog = new ReplaceDialog(this);
+        final ReplaceDialog replaceDialog = new ReplaceDialog(this);
         replaceDialog.setVisible(true);
     }
-
-    
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new EditorWindow().setVisible(true));
     }
-
-
 }

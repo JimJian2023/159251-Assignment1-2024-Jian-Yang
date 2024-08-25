@@ -3,31 +3,26 @@ package org.example;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class ReplaceDialog extends JDialog {
-    private JTextField searchField;
-    private JTextField replaceField;
-    private JButton replaceButton;
-    private JTextArea textArea;
+    private static final long serialVersionUID = 1L;
 
-    public ReplaceDialog(Frame owner) {
+    private final JTextArea textArea;
+    private final JTextField searchField;
+    private final JTextField replaceField;
+
+    public ReplaceDialog(final Frame owner) {
         super(owner, "Replace Text", true);
-        textArea = ((EditorWindow) owner).getTextArea();
+        this.textArea = ((EditorWindow) owner).getTextArea();
+        this.searchField = new JTextField(20);
+        this.replaceField = new JTextField(20);
         initializeComponents();
     }
 
     private void initializeComponents() {
-        searchField = new JTextField(20);
-        replaceField = new JTextField(20);
-        replaceButton = new JButton("Replace");
+        JButton replaceButton = new JButton("Replace");
 
-        replaceButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                replaceText();
-            }
-        });
+        replaceButton.addActionListener((ActionEvent e) -> replaceText());
 
         JPanel panel = new JPanel(new GridLayout(3, 2));
         panel.add(new JLabel("Find:"));

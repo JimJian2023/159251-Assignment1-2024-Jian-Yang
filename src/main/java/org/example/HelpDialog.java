@@ -3,9 +3,12 @@ package org.example;
 import javax.swing.*;
 
 public class HelpDialog extends JDialog {
-    public HelpDialog(JFrame parent) {
+    // 添加 serialVersionUID 字段
+    private static final long serialVersionUID = 1L;
+
+    public HelpDialog(final JFrame parent) {
         super(parent, "Help", true);
-        JTextArea textArea = new JTextArea();
+        final JTextArea textArea = new JTextArea();
         textArea.setText("How to Use the Text Editor:\n\n" +
                 "1. File Menu:\n" +
                 "   - New Window: Create a new text editor window.\n" +
