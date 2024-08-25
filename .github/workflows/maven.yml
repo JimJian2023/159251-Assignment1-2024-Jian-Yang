@@ -35,6 +35,6 @@ jobs:
 =======
 
     - name: Build and Test with Maven
->>>>>>> Pengfei/myset-up
+>>>>>>> main
       run: mvn clean test
    
