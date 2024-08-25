@@ -65,7 +65,7 @@ public class EditorWindow extends JFrame {
     public void launch() {
         setVisible(true);
     }
-    
+
     private JMenu createFileMenu() {
         JMenu fileMenu = new JMenu("File");
         JMenuItem newWindowMenuItem = new JMenuItem("New Window");
