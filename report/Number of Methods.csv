@@ -1,0 +1,81 @@
+Lines of code metrics,Sun, 25 Aug 2024 21:05:43 NZST
+Method,CLOC,JLOC,LOC,NCLOC,RLOC
+org.example.AboutDialog.AboutDialog(JFrame),0,0,6,6,42.86%
+"org.example.AboutDialog.initializeDialog(JFrame, JLabel)",0,0,5,5,35.71%
+org.example.DateTimeUtil.insertTimeAndDate(JTextArea),0,0,5,5,45.45%
+org.example.DateTimeUtil.updateDateTime(JLabel),0,0,4,4,36.36%
+org.example.EditorWindow.EditorWindow(),0,0,5,5,2.78%
+org.example.EditorWindow.creatSearchMenu(),0,0,10,10,5.56%
+org.example.EditorWindow.createEditMenu(),0,0,19,19,10.56%
+org.example.EditorWindow.createFileMenu(),1,0,26,25,14.44%
+org.example.EditorWindow.createHelpMenu(),0,0,10,10,5.56%
+org.example.EditorWindow.exportAsPDF(),1,0,14,13,7.78%
+org.example.EditorWindow.findText(),0,0,4,4,2.22%
+org.example.EditorWindow.getTextArea(),0,0,3,3,1.67%
+org.example.EditorWindow.initializeUI(),0,0,23,23,12.78%
+org.example.EditorWindow.insertTimeAndDate(),0,0,3,3,1.67%
+org.example.EditorWindow.launch(),0,0,3,3,1.67%
+org.example.EditorWindow.main(String[]),0,0,3,3,1.67%
+org.example.EditorWindow.openFile(),0,0,3,3,1.67%
+org.example.EditorWindow.openNewWindow(),0,0,3,3,1.67%
+org.example.EditorWindow.printText(),0,0,7,7,3.89%
+org.example.EditorWindow.replaceText(),0,0,4,4,2.22%
+org.example.EditorWindow.saveFile(),0,0,3,3,1.67%
+org.example.EditorWindow.saveFileAs(),0,0,13,13,7.22%
+org.example.EditorWindow.setupMenu(),0,0,8,8,4.44%
+org.example.EditorWindow.showAbout(),0,0,4,4,2.22%
+org.example.EditorWindow.showHelp(),0,0,4,4,2.22%
+org.example.EditorWindow.updateDateTime(),0,0,3,3,1.67%
+org.example.FileOperation.FileOperation(),0,0,2,2,5.71%
+"org.example.FileOperation.openFile(JFrame, RSyntaxTextArea)",1,0,17,16,48.57%
+"org.example.FileOperation.saveFile(JFrame, RSyntaxTextArea)",0,0,14,14,40.00%
+org.example.FindDialog.FindDialog(Frame),0,0,6,6,11.54%
+org.example.FindDialog.findText(),0,0,25,25,48.08%
+org.example.FindDialog.initializeComponents(),0,0,15,15,28.85%
+org.example.HelpDialog.HelpDialog(JFrame),0,0,24,24,85.71%
+org.example.Main.main(String[]),7,0,16,10,80.00%
+org.example.OdtFileHandler.OdtFileHandler(),0,0,2,2,10.53%
+"org.example.OdtFileHandler.openOdtFile(JFrame, RSyntaxTextArea, File)",1,0,15,14,78.95%
+"org.example.PDFExporter.exportToPDF(JFrame, JTextArea, File)",4,0,35,34,94.59%
+org.example.PrintUtil.PrintUtil(),0,0,2,2,12.50%
+org.example.PrintUtil.printText(JTextArea),0,0,12,12,75.00%
+org.example.ReplaceDialog.ReplaceDialog(Frame),0,0,7,7,17.95%
+org.example.ReplaceDialog.initializeComponents(),0,0,14,14,35.90%
+org.example.ReplaceDialog.replaceText(),0,0,12,12,30.77%
+org.example.SyntaxHighlighter.SyntaxHighlighter(),0,0,2,2,8.70%
+"org.example.SyntaxHighlighter.applySyntaxHighlighting(RSyntaxTextArea, File)",1,0,19,19,82.61%
+
+Class,CLOC,JLOC,LOC
+org.example.AboutDialog,0,0,14
+org.example.DateTimeUtil,0,0,11
+org.example.EditorWindow,2,0,180
+org.example.FileOperation,1,0,35
+org.example.FindDialog,0,0,52
+org.example.HelpDialog,1,0,28
+org.example.Main,9,0,20
+org.example.OdtFileHandler,1,0,19
+org.example.PDFExporter,4,0,37
+org.example.PrintUtil,0,0,16
+org.example.ReplaceDialog,0,0,39
+org.example.SyntaxHighlighter,1,0,23
+
+Package,CLOC,CLOC(rec),JLOC,JLOC(rec),LOC,LOC(rec),LOCp,LOCp(rec),LOCt,LOCt(rec),NCLOC,NCLOCp,NCLOCp(rec),NCLOCt
+,n/a,22,n/a,n/a,n/a,537,n/a,537,n/a,0,n/a,n/a,520,n/a
+org,n/a,22,n/a,n/a,n/a,537,n/a,537,n/a,0,n/a,n/a,520,n/a
+org.example,0,22,0,0,537,537,537,537,0,0,520,520,520,0
+
+Module,JLOC,L(Groovy),L(HTML),L(J),L(KT),L(XML),LOC,LOCp,LOCt,NCLOC,NCLOCp,NCLOCt
+Ass1_Text_editor,0,0,0,537,0,"1,669","2,326",537,0,"2,273",520,0
+
+FileType,LOC,NCLOC
+.gitignore (GitIgnore),33,33
+Dockerfile,33,27
+Java,537,520
+Markdown,1,1
+Text,28,n/a
+XML,"1,669","1,667"
+YAML,25,25
+
+Project,CLOC,JLOC,L(Groovy),L(HTML),L(J),L(KT),L(XML),LOC,LOCp,LOCt,NCLOC,NCLOCp,NCLOCt
+project,102,0,0,0,537,0,"1,669","2,326",537,0,"2,273",520,0
+

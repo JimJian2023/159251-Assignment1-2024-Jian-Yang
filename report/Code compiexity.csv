@@ -1,0 +1,71 @@
+Complexity metrics,Sun, 25 Aug 2024 21:14:26 NZST
+Method,CogC,ev(G),iv(G),v(G)
+actionPerformed(ActionEvent),0,n/a,n/a,n/a
+org.example.AboutDialog.AboutDialog(JFrame),0,1,1,1
+"org.example.AboutDialog.initializeDialog(JFrame, JLabel)",0,1,1,1
+org.example.DateTimeUtil.insertTimeAndDate(JTextArea),0,1,1,1
+org.example.DateTimeUtil.updateDateTime(JLabel),0,1,1,1
+org.example.EditorWindow.EditorWindow(),0,1,1,1
+org.example.EditorWindow.creatSearchMenu(),0,1,1,1
+org.example.EditorWindow.createEditMenu(),0,1,1,1
+org.example.EditorWindow.createFileMenu(),0,1,1,1
+org.example.EditorWindow.createHelpMenu(),0,1,1,1
+org.example.EditorWindow.exportAsPDF(),3,1,3,3
+org.example.EditorWindow.findText(),0,1,1,1
+org.example.EditorWindow.getTextArea(),0,1,1,1
+org.example.EditorWindow.initializeUI(),0,1,1,1
+org.example.EditorWindow.insertTimeAndDate(),0,1,1,1
+org.example.EditorWindow.launch(),0,1,1,1
+org.example.EditorWindow.main(String[]),0,1,1,1
+org.example.EditorWindow.openFile(),0,1,1,1
+org.example.EditorWindow.openNewWindow(),0,1,1,1
+org.example.EditorWindow.printText(),1,1,2,2
+org.example.EditorWindow.replaceText(),0,1,1,1
+org.example.EditorWindow.saveFile(),0,1,1,1
+org.example.EditorWindow.saveFileAs(),3,1,3,3
+org.example.EditorWindow.setupMenu(),0,1,1,1
+org.example.EditorWindow.showAbout(),0,1,1,1
+org.example.EditorWindow.showHelp(),0,1,1,1
+org.example.EditorWindow.updateDateTime(),0,1,1,1
+org.example.FileOperation.FileOperation(),0,1,1,1
+"org.example.FileOperation.openFile(JFrame, RSyntaxTextArea)",3,1,3,3
+"org.example.FileOperation.saveFile(JFrame, RSyntaxTextArea)",3,1,3,3
+org.example.FindDialog.FindDialog(Frame),0,1,1,1
+org.example.FindDialog.findText(),7,2,5,5
+org.example.FindDialog.initializeComponents(),0,1,1,1
+org.example.HelpDialog.HelpDialog(JFrame),0,1,1,1
+org.example.Main.main(String[]),1,1,2,2
+org.example.OdtFileHandler.OdtFileHandler(),0,1,1,1
+"org.example.OdtFileHandler.openOdtFile(JFrame, RSyntaxTextArea, File)",2,1,3,3
+"org.example.PDFExporter.exportToPDF(JFrame, JTextArea, File)",4,1,4,4
+org.example.PrintUtil.PrintUtil(),0,1,1,1
+org.example.PrintUtil.printText(JTextArea),3,1,3,3
+org.example.ReplaceDialog.ReplaceDialog(Frame),0,1,1,1
+org.example.ReplaceDialog.initializeComponents(),0,1,1,1
+org.example.ReplaceDialog.replaceText(),2,1,2,2
+org.example.SyntaxHighlighter.SyntaxHighlighter(),0,1,1,1
+"org.example.SyntaxHighlighter.applySyntaxHighlighting(RSyntaxTextArea, File)",5,1,5,5
+
+Class,OCavg,OCmax,WMC
+org.example.AboutDialog,1.00,1,2
+org.example.DateTimeUtil,1.00,1,2
+org.example.EditorWindow,1.14,3,25
+org.example.FileOperation,1.67,2,5
+org.example.FindDialog,1.75,4,7
+org.example.HelpDialog,1.00,1,1
+org.example.Main,1.00,1,1
+org.example.OdtFileHandler,1.50,2,3
+org.example.PDFExporter,3.00,3,3
+org.example.PrintUtil,1.50,2,3
+org.example.ReplaceDialog,1.33,2,4
+org.example.SyntaxHighlighter,2.50,4,5
+
+Package,v(G)avg,v(G)tot
+org.example,1.59,70
+
+Module,v(G)avg,v(G)tot
+Ass1_Text_editor,1.59,70
+
+Project,v(G)avg,v(G)tot
+project,1.59,70
+
