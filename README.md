@@ -1,8 +1,8 @@
 # 159251 Assignment 1: Text Editor
 
 ## Group Members
-- **Jim Jian** - Student ID: [Your Student ID]
-- **Pengfei Yang** - Student ID: [Your Partner's Student ID]
+- **Jim Jian** - Student ID: [23019851]
+- **Pengfei Yang** - Student ID: [23018913]
 
 ## Project Overview
 This project is a simple text editor built using Java Swing as part of the 159251 Software Engineering course. The application allows users to create, edit, and save text files with a graphical user interface.
